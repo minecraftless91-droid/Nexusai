@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>mcaddto – Minecraft Bedrock Addons &amp; CurseForge Mods</title>
+<meta name="description" content="Discover Bedrock addons and CurseForge mods, and buy creator-made premium packs on mcaddto.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
+<style>
+:root{--bg:#f4f6f1;--card:#fff;--ink:#1b2a1b;--mute:#5d6b5d;--line:#dde4d6;--accent:#3f9b3f;--accent-ink:#fff;--accent2:#e8a23a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121712;--card:#1b231b;--ink:#eaf2e6;--mute:#9aae96;--line:#2c382c;--accent:#58bd58;--accent-ink:#0c140c;--accent2:#f0b254}}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:1.35rem;letter-spacing:-.5px;text-decoration:none}
+.logo span{color:var(--accent)}
+nav{display:flex;gap:14px;align-items:center;font-size:.95rem}
+nav a{text-decoration:none;color:var(--mute)}
+.cartbtn{background:var(--accent);color:var(--accent-ink);border:0;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer}
+.hero{padding:44px 0 28px}
+.hero h1{font-size:clamp(1.9rem,6vw,3.2rem);line-height:1.1;margin:0 0 12px;letter-spacing:-1px}
+.hero p{color:var(--mute);max-width:560px;margin:0 0 20px}
+.search{display:flex;gap:8px;flex-wrap:wrap}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+.search input{flex:1 1 220px;width:auto}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tab{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;font:inherit;font-size:.9rem}
+.tab[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.thumb{height:110px;display:grid;place-items:center;font-size:2.6rem}
+.body{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.body h3{margin:0;font-size:1.02rem}
+.body p{margin:0;color:var(--mute);font-size:.88rem;flex:1}
+.tag{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--accent)}
+.tag.cf{color:var(--accent2)}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.price{font-weight:800}
+.btn{border:0;border-radius:8px;padding:8px 12px;font:inherit;font-weight:700;cursor:pointer;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-size:.9rem}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+section{padding:32px 0}
+h2{margin:0 0 12px;letter-spacing:-.5px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+form{display:grid;gap:10px;max-width:520px}
+.note{font-size:.82rem;color:var(--mute)}
+footer{border-top:1px solid var(--line);padding:24px 0 32px;color:var(--mute);font-size:.82rem}
+#drawer{position:fixed;inset:0 0 0 auto;width:min(360px,100%);background:var(--card);border-left:1px solid var(--line);z-index:30;transform:translateX(100%);transition:transform .2s;display:flex;flex-direction:column;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+#drawer.open{transform:none}
+#items{flex:1;overflow:auto}
+.ci{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.ci button{background:none;border:0;color:var(--mute);cursor:pointer}
+.empty{color:var(--mute);padding:20px 0;text-align:center}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <a class="logo" href="#">mc<span>addto</span></a>
+  <nav><a href="#shop">Shop</a><a href="#sell">Sell</a><button class="cartbtn" id="cartbtn">Cart (<span id="cc">0</span>)</button></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Addons &amp; mods for Minecraft, all in one place.</h1>
+    <p>Browse Bedrock addons and CurseForge mods, or buy premium packs straight from the creators who made them.</p>
+    <div class="search"><input id="q" type="search" placeholder="Search addons and mods…" aria-label="Search"></div>
+  </div>
+
+  <section id="shop" style="padding-top:0">
+    <div class="tabs" id="tabs">
+      <button class="tab" data-f="all" aria-pressed="true">All</button>
+      <button class="tab" data-f="bedrock" aria-pressed="false">Bedrock addons</button>
+      <button class="tab" data-f="curseforge" aria-pressed="false">CurseForge mods</button>
+      <button class="tab" data-f="premium" aria-pressed="false">Premium</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="note" style="margin-top:14px">Sample listings shown. Replace them in the <code>PRODUCTS</code> list at the bottom of this file.</p>
+  </section>
+
+  <section id="sell">
+    <div class="panel">
+      <h2>Sell your addon</h2>
+      <p class="note" style="margin-top:0">Made it yourself? Submit it and we’ll list it. Only list work you created or have written permission to sell.</p>
+      <form name="submit-addon" method="POST" data-netlify="true" netlify-honeypot="bot">
+        <input type="hidden" name="form-name" value="submit-addon">
+        <p hidden><label>Skip this: <input name="bot"></label></p>
+        <input name="creator" placeholder="Your name or studio" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="title" placeholder="Addon title" required>
+        <select name="type" aria-label="Type"><option>Bedrock addon</option><option>CurseForge mod</option></select>
+        <input name="url" type="url" placeholder="Link to your addon or CurseForge page">
+        <input name="price" placeholder="Price in USD (0 for free)">
+        <textarea name="desc" rows="3" placeholder="Short description"></textarea>
+        <button class="btn" type="submit">Submit for review</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <strong>mcaddto</strong> is an unofficial fan site. Not affiliated with, endorsed by, or associated with Mojang, Microsoft, or Overwolf/CurseForge. Minecraft is a trademark of Mojang AB. Creators keep ownership of their work.
+</div></footer>
+
+<aside id="drawer" aria-label="Cart">
+  <div style="display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0">Your cart</h2><button class="btn alt" id="closecart">Close</button></div>
+  <div id="items"></div>
+  <div class="row"><span>Total</span><span class="price" id="total">$0.00</span></div>
+  <button class="btn" id="checkout" style="margin-top:10px;padding:12px">Checkout</button>
+  <p class="note">Connect Stripe Payment Links in <code>CHECKOUT_URL</code> to take real payments.</p>
+</aside>
+
+<script>
+// ---- Edit these ----
+var CHECKOUT_URL = ""; // e.g. a Stripe Payment Link
+var PRODUCTS = [
+  {id:1,name:"Sample Creature Pack",type:"bedrock",price:3.99,emoji:"🐉",bg:"#d9ecd0",desc:"Sample premium Bedrock addon with new mobs and behaviors."},
+  {id:2,name:"Sample Furniture Addon",type:"bedrock",price:2.49,emoji:"🛋️",bg:"#f2e3c6",desc:"Sample premium addon adding craftable furniture blocks."},
+  {id:3,name:"Sample Texture Pack",type:"bedrock",price:0,emoji:"🎨",bg:"#d6e6f2",desc:"Sample free resource pack, linked from its creator.",url:"https://www.curseforge.com/minecraft-bedrock"},
+  {id:4,name:"Sample Tech Mod",type:"curseforge",price:0,emoji:"⚙️",bg:"#e4dcef",desc:"Sample listing that links out to a CurseForge mod page.",url:"https://www.curseforge.com/minecraft/mc-mods"},
+  {id:5,name:"Sample Magic Mod",type:"curseforge",price:0,emoji:"🔮",bg:"#efd6e4",desc:"Sample listing that links out to a CurseForge mod page.",url:"https://www.curseforge.com/minecraft/mc-mods"},
+  {id:6,name:"Sample Adventure Map Addon",type:"bedrock",price:5.99,emoji:"🗺️",bg:"#d9ecd0",desc:"Sample premium addon with quests and custom dungeons."}
+];
+// --------------------
+var cart=[],filter="all",$=function(s){return document.querySelector(s)};
+function money(n){return n===0?"Free":"$"+n.toFixed(2)}
+function render(){
+  var q=$("#q").value.toLowerCase(),g=$("#grid"),out="";
+  PRODUCTS.filter(function(p){
+    var okF=filter==="all"||(filter==="premium"?p.price>0:p.type===filter);
+    return okF&&(p.name+p.desc).toLowerCase().indexOf(q)>-1;
+  }).forEach(function(p){
+    var cf=p.type==="curseforge";
+    var act=p.price>0?'<button class="btn" data-add="'+p.id+'">Add to cart</button>':'<a class="btn alt" href="'+(p.url||"#")+'" target="_blank" rel="noopener">View page</a>';
+    out+='<article class="card"><div class="thumb" style="background:'+p.bg+'">'+p.emoji+'</div><div class="body"><span class="tag '+(cf?"cf":"")+'">'+(cf?"CurseForge mod":"Bedrock addon")+'</span><h3>'+p.name+'</h3><p>'+p.desc+'</p><div class="row"><span class="price">'+money(p.price)+'</span>'+act+'</div></div></article>';
+  });
+  g.innerHTML=out||'<div class="empty">Nothing matches yet.</div>';
+}
+function drawCart(){
+  var t=0,h="";
+  cart.forEach(function(p,i){t+=p.price;h+='<div class="ci"><span>'+p.name+'</span><span>'+money(p.price)+' <button data-rm="'+i+'" aria-label="Remove">✕</button></span></div>'});
+  $("#items").innerHTML=h||'<div class="empty">Your cart is empty.</div>';
+  $("#total").textContent=money(t)==="Free"?"$0.00":money(t);
+  $("#cc").textContent=cart.length;
+}
+document.addEventListener("click",function(e){
+  var t=e.target;
+  if(t.dataset.add){var p=PRODUCTS.filter(function(x){return x.id==t.dataset.add})[0];if(!cart.some(function(x){return x.id===p.id})){cart.push(p)}drawCart();$("#drawer").classList.add("open")}
+  if(t.dataset.rm){cart.splice(+t.dataset.rm,1);drawCart()}
+  if(t.dataset.f){filter=t.dataset.f;document.querySelectorAll(".tab").forEach(function(b){b.setAttribute("aria-pressed",b===t)});render()}
+});
+$("#q").addEventListener("input",render);
+$("#cartbtn").onclick=function(){$("#drawer").classList.add("open")};
+$("#closecart").onclick=function(){$("#drawer").classList.remove("open")};
+$("#checkout").onclick=function(){
+  if(!cart.length){return}
+  if(CHECKOUT_URL){window.location.href=CHECKOUT_URL}else{alert("Checkout isn’t connected yet. Add a Stripe Payment Link to CHECKOUT_URL.")}
+};
+render();drawCart();
+</script>
+</body>
+</html>
